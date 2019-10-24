@@ -5,8 +5,10 @@ app.use(express.static(__dirname + '/public')); // Dico ad express dove recupera
 
 app.get('/', function (req, res) {
 //res.send('Hello World!');
-res.render('index');  //Dico a express di processare e inviare la pagina index.pug
-
+res.render('index', {
+   title: 'Homepage',
+   content : 'Questa pagina parla del mondo e di tanto altro'
+ });
 });
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
